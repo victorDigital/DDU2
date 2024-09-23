@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy4nf1vvs07b"]
+[gd_scene load_steps=7 format=3 uid="uid://cy4nf1vvs07b"]
 
 [ext_resource type="PackedScene" uid="uid://c6r73fpjvvn8u" path="res://Scenes/player_1.tscn" id="1_j67ix"]
+[ext_resource type="Script" path="res://Scripts/player_1.gd" id="2_66lh6"]
 [ext_resource type="PackedScene" uid="uid://devwmnvbxqfgh" path="res://Scenes/player_2.tscn" id="2_xdjhh"]
+[ext_resource type="Script" path="res://Scripts/player_2.gd" id="3_tvpur"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ky6b4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wio1y"]
+size = Vector2(327.358, 36)
 
 [node name="Game" type="Node2D"]
 
 [node name="player_1" parent="." instance=ExtResource("1_j67ix")]
 position = Vector2(1, -6)
+script = ExtResource("2_66lh6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="player_2" parent="." instance=ExtResource("2_xdjhh")]
 position = Vector2(140, 0)
+script = ExtResource("3_tvpur")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ky6b4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(119.331, 8)
+scale = Vector2(1.32985, 0.436315)
+shape = SubResource("RectangleShape2D_wio1y")
