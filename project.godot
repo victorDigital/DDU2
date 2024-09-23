@@ -13,3 +13,7 @@ config_version=5
 config/name="DDU2"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom_font="res://Assets/Fonts/Jersey10-Regular.ttf"
