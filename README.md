@@ -2,6 +2,7 @@
 Af: August, Aske, Gyatsav og Victor
 
 ## Markup Protoype
+![image](https://github.com/user-attachments/assets/b3edfb54-a3f9-47a3-b304-bf3e54e9fdcd)
 
 ## User Stories
 ### Movement
