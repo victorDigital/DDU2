@@ -2,6 +2,7 @@
 Af: August, Aske, Gyatsav og Victor
 
 ## Markup Protoype
+![image](https://github.com/user-attachments/assets/b3edfb54-a3f9-47a3-b304-bf3e54e9fdcd)
 
 ## User Stories
 ### Movement
@@ -16,4 +17,6 @@ begge brugere skal kunne samle pickups op ved at gå ind i dem.
 
 ## User feedback
 
-## Tasks
+## [Tasks](https://github.com/users/victorDigital/projects/2)
+![image](https://github.com/user-attachments/assets/1a8e92be-74b6-4259-b9ae-ea06d7b5f60c)
+
