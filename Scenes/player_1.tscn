@@ -205,17 +205,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwe54"]
-size = Vector2(20, 26)
+size = Vector2(10, 12)
 
 [node name="player_1" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
-scale = Vector2(0.909091, 0.90625)
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(0.465368, 0.463914)
 sprite_frames = SubResource("SpriteFrames_sqww5")
 animation = &"fall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_uwe54")
