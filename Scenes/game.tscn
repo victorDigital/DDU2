@@ -357,10 +357,10 @@ texture = ExtResource("5_j1ett")
 3:1/0 = 0
 4:1/0 = 0
 6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
 8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
@@ -368,17 +368,20 @@ texture = ExtResource("5_j1ett")
 14:1/0 = 0
 15:1/0 = 0
 17:1/0 = 0
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:1/0 = 0
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
 6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:2/0 = 0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 8:2/0 = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:2/0 = 0
 14:2/0 = 0
 15:2/0 = 0
@@ -524,7 +527,7 @@ collision_enabled = false
 [node name="player_1" parent="." instance=ExtResource("1_j67ix")]
 position = Vector2(-70, 24)
 scale = Vector2(1.5, 1.5)
-collision_layer = 2
+collision_mask = 3
 script = ExtResource("2_66lh6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -534,6 +537,7 @@ zoom = Vector2(3, 3)
 [node name="player_2" parent="." instance=ExtResource("2_xdjhh")]
 position = Vector2(96, 21)
 scale = Vector2(1.5, 1.5)
+collision_mask = 3
 script = ExtResource("3_tvpur")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -544,13 +548,10 @@ tile_map_data = PackedByteArray("AAAGAAMAAAAIAAAAAAAFAAMAAAAHAAAAAAAEAAMAAAAHAAA
 tile_set = SubResource("TileSet_4m7c0")
 
 [node name="Bridge" parent="." instance=ExtResource("8_ed4gb")]
-position = Vector2(-31, 23)
-collision_mask = 2
+position = Vector2(-40, 27)
 
 [node name="Bridge2" parent="." instance=ExtResource("8_ed4gb")]
-position = Vector2(38, 5)
-collision_mask = 2
+position = Vector2(-7, -29)
 
 [node name="Bridge3" parent="." instance=ExtResource("8_ed4gb")]
-position = Vector2(-35, -27)
-collision_mask = 2
+position = Vector2(39, 12)

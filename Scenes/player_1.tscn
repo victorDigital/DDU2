@@ -208,6 +208,7 @@ animations = [{
 size = Vector2(10, 12.5)
 
 [node name="player_1" type="CharacterBody2D"]
+collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.499)

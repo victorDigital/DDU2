@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3wdqs28hf1oq"]
+[gd_scene load_steps=5 format=3 uid="uid://b3wdqs28hf1oq"]
 
 [ext_resource type="Texture2D" uid="uid://twkkb3ivokca" path="res://Assets/Pixel/Terrain/Terrain (16x16).png" id="1_5usoa"]
-[ext_resource type="Script" path="res://Scripts/bridge.gd" id="1_gx7b5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p6hkp"]
 texture = ExtResource("1_5usoa")
@@ -36,7 +35,6 @@ texture = ExtResource("1_5usoa")
 13:1/0 = 0
 14:1/0 = 0
 15:1/0 = 0
-17:1/0 = 0
 18:1/0 = 0
 19:1/0 = 0
 0:2/0 = 0
@@ -149,6 +147,8 @@ texture = ExtResource("1_5usoa")
 18:10/0 = 0
 19:10/0 = 0
 20:10/0 = 0
+17:1/next_alternative_id = 2
+17:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2h23p"]
 sources/0 = SubResource("TileSetAtlasSource_p6hkp")
@@ -156,8 +156,8 @@ sources/0 = SubResource("TileSetAtlasSource_p6hkp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvo7x"]
 size = Vector2(4.99645, 48.0014)
 
-[node name="Bridge" type="Area2D"]
-script = ExtResource("1_gx7b5")
+[node name="Bridge" type="StaticBody2D"]
+collision_mask = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 17, 0, 1, 0, 0, 0, 0, 0, 255, 255, 0, 0, 18, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 19, 0, 1, 0, 0, 0)
@@ -167,3 +167,4 @@ tile_set = SubResource("TileSet_2h23p")
 position = Vector2(8.00106, -13.4982)
 rotation = 1.57009
 shape = SubResource("RectangleShape2D_xvo7x")
+one_way_collision_margin = 10.2
