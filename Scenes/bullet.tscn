@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://muuai75qlft3"]
+
+[ext_resource type="Texture2D" uid="uid://djtt5q47077ec" path="res://Assets/Pixel/Other/Dust Particle.png" id="1_wqlv7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynh3u"]
+radius = 4.0
+
+[node name="Bullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wqlv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ynh3u")
