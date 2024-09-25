@@ -17,6 +17,8 @@ begge brugere skal kunne samle pickups op ved at gå ind i dem.
 
 ## User feedback
 Sofie: sjovt, spændende, intuitivt og underholdene
+Elliot: lyder fedt, men ønsker at power ups inkluderer: health boost, extra damage, extra knockback, faster firing rate
+Elmer: Det gad jeg godt spille.
 ## [Tasks](https://github.com/users/victorDigital/projects/2)
 ![image](https://github.com/user-attachments/assets/1a8e92be-74b6-4259-b9ae-ea06d7b5f60c)
 
