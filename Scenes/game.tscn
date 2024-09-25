@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://betdgmhwg0xty"]
+[gd_scene load_steps=23 format=4 uid="uid://betdgmhwg0xty"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_gd6tt"]
 [ext_resource type="PackedScene" uid="uid://c6r73fpjvvn8u" path="res://Scenes/player_1.tscn" id="1_j67ix"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://clhiat701h7ef" path="res://Assets/04 - Copy (3).png" id="10_qa4lv"]
 [ext_resource type="Texture2D" uid="uid://ckuw4kk5eapwd" path="res://Assets/Pixel/Main Characters/Ninja Frog/Fall (32x32).png" id="10_ywogc"]
 [ext_resource type="Texture2D" uid="uid://g2ei10x3gjq2" path="res://Assets/Pixel/Main Characters/Pink Man/Jump (32x32).png" id="11_84nl2"]
+[ext_resource type="Script" path="res://Scripts/player_2_health.gd" id="13_cy1xr"]
+[ext_resource type="Script" path="res://Scripts/player_1_health.gd" id="14_3i1iv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873md"]
 texture = ExtResource("5_j1ett")
@@ -559,24 +561,6 @@ position = Vector2(-7, -29)
 [node name="Bridge3" parent="." instance=ExtResource("8_ed4gb")]
 position = Vector2(39, 12)
 
-[node name="Player1Health" type="TextureProgressBar" parent="."]
-offset_left = -189.0
-offset_top = -121.0
-offset_right = -149.0
-offset_bottom = -81.0
-texture_under = ExtResource("8_c03qx")
-texture_over = ExtResource("9_pl426")
-texture_progress = ExtResource("10_qa4lv")
-
-[node name="Player2Health" type="TextureProgressBar" parent="."]
-offset_left = 151.0
-offset_top = -121.0
-offset_right = 191.0
-offset_bottom = -81.0
-texture_under = ExtResource("8_c03qx")
-texture_over = ExtResource("9_pl426")
-texture_progress = ExtResource("10_qa4lv")
-
 [node name="Fall(32x32)" type="Sprite2D" parent="."]
 position = Vector2(141, -117)
 scale = Vector2(0.53125, 0.53125)
@@ -586,3 +570,23 @@ texture = ExtResource("10_ywogc")
 position = Vector2(-142, -116)
 scale = Vector2(0.546875, 0.546875)
 texture = ExtResource("11_84nl2")
+
+[node name="Player2Health" type="TextureProgressBar" parent="."]
+offset_left = 149.0
+offset_top = -122.0
+offset_right = 189.0
+offset_bottom = -82.0
+texture_under = ExtResource("8_c03qx")
+texture_over = ExtResource("9_pl426")
+texture_progress = ExtResource("10_qa4lv")
+script = ExtResource("13_cy1xr")
+
+[node name="Player1Health" type="TextureProgressBar" parent="."]
+offset_left = -187.0
+offset_top = -120.0
+offset_right = -147.0
+offset_bottom = -80.0
+texture_under = ExtResource("8_c03qx")
+texture_over = ExtResource("9_pl426")
+texture_progress = ExtResource("10_qa4lv")
+script = ExtResource("14_3i1iv")

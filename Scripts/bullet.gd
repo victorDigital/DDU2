@@ -17,9 +17,7 @@ func _process(delta):
 # Function triggered when the bullet collides with another body
 
 func _on_Bullet_body_entered(body):
-	print("Collision with: ", body.name, " of type: ", typeof(body)) 
 	# Add logic here if you want to check what was hit, e.g.:
 	if body.is_in_group("players"):
 		body.take_damage(bullet_dmg)
-	print("hit")
 	queue_free() 

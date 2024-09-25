@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export var MAX_HEALTH = 100
 var health
+signal p1_health_changed(new_health)
+
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
@@ -17,21 +19,23 @@ var player_look = 1
 func _ready():
 	add_to_group("players")
 	health = MAX_HEALTH
+	
+
 
 
 func take_damage(dmg: int):
 	if health <= 0:
 		_player_dead()
 	else:
-		
 		health -= dmg
+
 	
 		
 
 func _physics_process(delta: float) -> void:
+	emit_signal("p1_health_changed", health)
+
 	# Add the gravity.
-	Global.globalHPPlayer1 = health
-	print(Global.globalHPPlayer1)
 	if not is_on_floor():
 		velocity += get_gravity() * delta*1.5
 		

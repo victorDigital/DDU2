@@ -45,6 +45,8 @@ func _setup_buttons():
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	var background = background_scene.instantiate()  # Create an instance of the background
+	background.set_process(false) 
+	background.set_physics_process(false) 
 	add_child(background) 
 	for child in background.get_children():
 			if child is Node:  # Check if the child is a Node type
