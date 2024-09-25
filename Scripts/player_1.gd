@@ -23,6 +23,7 @@ func take_damage(dmg: int):
 	if health <= 0:
 		_player_dead()
 	else:
+		
 		health -= dmg
 	
 		
@@ -81,6 +82,7 @@ func _physics_process(delta: float) -> void:
 
 func _player_dead():
 	print("Player 1 is dead")
+	queue_free()
 
 
 func _on_shoot_cooldown_timeout() -> void:

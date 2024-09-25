@@ -81,6 +81,7 @@ func _physics_process(delta: float) -> void:
 
 func _player_dead():
 	print("Player 2 is dead")
+	queue_free()
 
 
 func _on_shoot_cooldown_timeout() -> void:
