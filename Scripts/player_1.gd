@@ -84,3 +84,4 @@ func _player_dead():
 
 func _on_shoot_cooldown_timeout() -> void:
 	canshoot = true
+	

@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://betdgmhwg0xty"]
+[gd_scene load_steps=18 format=4 uid="uid://betdgmhwg0xty"]
 
 [ext_resource type="PackedScene" uid="uid://c6r73fpjvvn8u" path="res://Scenes/player_1.tscn" id="1_j67ix"]
 [ext_resource type="Texture2D" uid="uid://caicefmqu8dl8" path="res://Assets/Pixel/Background/Blue.png" id="2_0xqke"]
 [ext_resource type="PackedScene" uid="uid://devwmnvbxqfgh" path="res://Scenes/player_2.tscn" id="2_xdjhh"]
 [ext_resource type="Texture2D" uid="uid://dw1coi3ik0o0w" path="res://Assets/Pixel/Terrain/Terrain (16x16) - Dark.png" id="3_7on7e"]
 [ext_resource type="Texture2D" uid="uid://twkkb3ivokca" path="res://Assets/Pixel/Terrain/Terrain (16x16).png" id="5_j1ett"]
+[ext_resource type="Texture2D" uid="uid://dqi7gpx7uh524" path="res://Assets/04 - Copy (2).png" id="8_c03qx"]
 [ext_resource type="PackedScene" uid="uid://cub2w1n12x5jl" path="res://Scenes/bridge.tscn" id="8_ed4gb"]
+[ext_resource type="Texture2D" uid="uid://c128e1o6lo4jk" path="res://Assets/04 - Copy.png" id="9_pl426"]
+[ext_resource type="Texture2D" uid="uid://clhiat701h7ef" path="res://Assets/04 - Copy (3).png" id="10_qa4lv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873md"]
 texture = ExtResource("5_j1ett")
@@ -551,3 +554,21 @@ position = Vector2(-7, -29)
 
 [node name="Bridge3" parent="." instance=ExtResource("8_ed4gb")]
 position = Vector2(39, 12)
+
+[node name="Player1Health" type="TextureProgressBar" parent="."]
+offset_left = -189.0
+offset_top = -121.0
+offset_right = -149.0
+offset_bottom = -81.0
+texture_under = ExtResource("8_c03qx")
+texture_over = ExtResource("9_pl426")
+texture_progress = ExtResource("10_qa4lv")
+
+[node name="Player2Health" type="TextureProgressBar" parent="."]
+offset_left = 151.0
+offset_top = -121.0
+offset_right = 191.0
+offset_bottom = -81.0
+texture_under = ExtResource("8_c03qx")
+texture_over = ExtResource("9_pl426")
+texture_progress = ExtResource("10_qa4lv")
