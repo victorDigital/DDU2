@@ -28,7 +28,9 @@ func take_damage(dmg: int):
 	
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	
+	Global.globalHPPlayer2 = health
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta*1.5
 
