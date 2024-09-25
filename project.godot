@@ -25,7 +25,10 @@ window/stretch/mode="canvas_items"
 
 [gui]
 
-theme/custom_font="res://Assets/Fonts/Jersey10-Regular.ttf"
+theme/custom_font="res://Assets/Pixel/Menu/Text/Text (White) (8x10).png"
+theme/default_font_hinting=2
+theme/default_font_multichannel_signed_distance_field=true
+theme/lcd_subpixel_layout=0
 
 [input]
 

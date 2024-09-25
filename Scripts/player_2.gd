@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var MAX_HEALTH = 100
 var health
 signal p2_health_changed(new_health)
+signal player_dead(player)
+
 
 
 const SPEED = 150.0
@@ -20,6 +22,8 @@ func _ready() -> void:
 	$AnimatedSprite2D.flip_h = true
 	add_to_group("players")
 	health = MAX_HEALTH
+	emit_signal("p2_health_changed", health)
+
 	
 	
 	
@@ -84,7 +88,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _player_dead():
-	print("Player 2 is dead")
+	emit_signal("player_dead", 2)
 	queue_free()
 
 

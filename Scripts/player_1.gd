@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var MAX_HEALTH = 100
 var health
 signal p1_health_changed(new_health)
+signal player_dead(player)
+
 
 
 const SPEED = 150.0
@@ -19,6 +21,8 @@ var player_look = 1
 func _ready():
 	add_to_group("players")
 	health = MAX_HEALTH
+	emit_signal("p1_health_changed", health)
+
 	
 
 
@@ -85,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		
 
 func _player_dead():
-	print("Player 1 is dead")
+	emit_signal("player_dead", 1)
 	queue_free()
 
 

@@ -532,7 +532,7 @@ tile_set = SubResource("TileSet_ucojy")
 collision_enabled = false
 
 [node name="player_1" parent="." instance=ExtResource("1_j67ix")]
-position = Vector2(-70, 24)
+position = Vector2(-70, 30)
 scale = Vector2(1.5, 1.5)
 collision_mask = 3
 
@@ -541,7 +541,7 @@ position = Vector2(0, -16.86)
 zoom = Vector2(3, 3)
 
 [node name="player_2" parent="." instance=ExtResource("2_xdjhh")]
-position = Vector2(96, 21)
+position = Vector2(96, 30)
 scale = Vector2(1.5, 1.5)
 collision_mask = 3
 
@@ -576,6 +576,7 @@ offset_left = 149.0
 offset_top = -122.0
 offset_right = 189.0
 offset_bottom = -82.0
+value = 100.0
 texture_under = ExtResource("8_c03qx")
 texture_over = ExtResource("9_pl426")
 texture_progress = ExtResource("10_qa4lv")
@@ -586,6 +587,7 @@ offset_left = -187.0
 offset_top = -120.0
 offset_right = -147.0
 offset_bottom = -80.0
+value = 100.0
 texture_under = ExtResource("8_c03qx")
 texture_over = ExtResource("9_pl426")
 texture_progress = ExtResource("10_qa4lv")
