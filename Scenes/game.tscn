@@ -1,11 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://betdgmhwg0xty"]
+[gd_scene load_steps=15 format=4 uid="uid://betdgmhwg0xty"]
 
 [ext_resource type="PackedScene" uid="uid://c6r73fpjvvn8u" path="res://Scenes/player_1.tscn" id="1_j67ix"]
 [ext_resource type="Texture2D" uid="uid://caicefmqu8dl8" path="res://Assets/Pixel/Background/Blue.png" id="2_0xqke"]
-[ext_resource type="Script" path="res://Scripts/player_1.gd" id="2_66lh6"]
 [ext_resource type="PackedScene" uid="uid://devwmnvbxqfgh" path="res://Scenes/player_2.tscn" id="2_xdjhh"]
 [ext_resource type="Texture2D" uid="uid://dw1coi3ik0o0w" path="res://Assets/Pixel/Terrain/Terrain (16x16) - Dark.png" id="3_7on7e"]
-[ext_resource type="Script" path="res://Scripts/player_2.gd" id="3_tvpur"]
 [ext_resource type="Texture2D" uid="uid://twkkb3ivokca" path="res://Assets/Pixel/Terrain/Terrain (16x16).png" id="5_j1ett"]
 [ext_resource type="PackedScene" uid="uid://cub2w1n12x5jl" path="res://Scenes/bridge.tscn" id="8_ed4gb"]
 
@@ -528,7 +526,6 @@ collision_enabled = false
 position = Vector2(-70, 24)
 scale = Vector2(1.5, 1.5)
 collision_mask = 3
-script = ExtResource("2_66lh6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -16.86)
@@ -538,7 +535,6 @@ zoom = Vector2(3, 3)
 position = Vector2(96, 21)
 scale = Vector2(1.5, 1.5)
 collision_mask = 3
-script = ExtResource("3_tvpur")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(0, 1)

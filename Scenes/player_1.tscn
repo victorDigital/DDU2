@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://c6r73fpjvvn8u"]
+[gd_scene load_steps=33 format=3 uid="uid://c6r73fpjvvn8u"]
 
 [ext_resource type="Texture2D" uid="uid://cb1y46m3f4h5n" path="res://Assets/Pixel/Main Characters/Pink Man/Fall (32x32).png" id="1_7vh4d"]
+[ext_resource type="Script" path="res://Scripts/player_1.gd" id="1_8m76s"]
 [ext_resource type="Texture2D" uid="uid://cynu0d562qfrn" path="res://Assets/Pixel/Main Characters/Pink Man/Idle (32x32).png" id="1_jyb0p"]
 [ext_resource type="Texture2D" uid="uid://g2ei10x3gjq2" path="res://Assets/Pixel/Main Characters/Pink Man/Jump (32x32).png" id="2_ghaeq"]
 [ext_resource type="Texture2D" uid="uid://dcrxsnrwtxa88" path="res://Assets/Pixel/Main Characters/Pink Man/Run (32x32).png" id="2_n04c2"]
@@ -209,6 +210,7 @@ size = Vector2(10, 12.5)
 
 [node name="player_1" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_8m76s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.499)
@@ -219,3 +221,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_uwe54")
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
