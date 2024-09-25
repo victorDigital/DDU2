@@ -15,7 +15,6 @@ func _ready() -> void:
 	p2.connect("player_dead", Callable(self, "_game_over"))
 	
 func _game_over(i):
-	print("Player ", i, " is dead")
 	if i == 1:
 		Global.lastWinner = 2
 	elif i == 2:
