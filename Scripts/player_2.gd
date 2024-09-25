@@ -1,17 +1,31 @@
 extends CharacterBody2D
 
 
+@export var MAX_HEALTH = 100
+var health
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 var canshoot =true
-
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var shoot_cooldown: Timer = $ShootCooldown
 var shoot_offset: Vector2
 const BULLET = preload("res://Scenes/bullet.tscn")
-var player_look = 1
+var player_look = 0
 
+
+func _ready() -> void:
+	$AnimatedSprite2D.flip_h = true
+	add_to_group("players")
+	health = MAX_HEALTH
+	
+	
+func take_damage(dmg: int):
+	if dmg >= health:
+		_player_dead()
+	else:
+		health -= dmg
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -55,14 +69,16 @@ func _physics_process(delta: float) -> void:
 			var shoot_position
 			if player_look == 1:
 				shoot_position = 0
-			if player_look == 0:
+			if player_look == 0: 
 				shoot_position = -PI
 			var bullet = BULLET.instantiate()
-			bullet.position = global_position
+			bullet.position = global_position + Vector2(10 * cos(shoot_position), 10* sin(shoot_position))
 			bullet.rotate(shoot_position)
 			get_tree().root.add_child(bullet)
 
 
+func _player_dead():
+	print("Player 2 is dead")
 
 
 func _on_shoot_cooldown_timeout() -> void:
