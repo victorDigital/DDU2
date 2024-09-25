@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	
 func take_damage(dmg: int):
-	if dmg >= health:
+	if health <= 0:
 		_player_dead()
 	else:
 		health -= dmg
