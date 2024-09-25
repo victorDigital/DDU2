@@ -55,7 +55,6 @@ func _ready() -> void:
 			if child is Node:  # Check if the child is a Node type
 				child.set_process(false)  # Disable processing for the child
 				child.set_physics_process(false)
-				print("Paused:", child.name)
 	
 	
 	var overlay = ColorRect.new()  # Create a new ColorRect
