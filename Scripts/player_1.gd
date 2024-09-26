@@ -25,7 +25,7 @@ func _ready():
 
 	
 func increase_health(amount: int):
-	print("test")
+	health += amount
 
 
 func take_damage(dmg: int):
