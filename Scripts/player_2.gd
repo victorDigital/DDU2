@@ -17,6 +17,8 @@ var shoot_offset: Vector2
 const BULLET = preload("res://Scenes/bullet.tscn")
 var player_look = 0
 
+func increase_health(amount: int):
+	print("test")
 
 func _ready() -> void:
 	$AnimatedSprite2D.flip_h = true

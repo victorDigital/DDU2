@@ -24,7 +24,8 @@ func _ready():
 	emit_signal("p1_health_changed", health)
 
 	
-
+func increase_health(amount: int):
+	print("test")
 
 
 func take_damage(dmg: int):

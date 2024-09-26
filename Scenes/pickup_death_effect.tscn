@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddkkcgr8l7ki0"]
+
+[ext_resource type="Script" path="res://Scripts/pickup_death_effect.gd" id="1_fyfpp"]
+[ext_resource type="Texture2D" uid="uid://bg5s1wikqrbi7" path="res://Assets/Pixel/Items/Fruits/Collected.png" id="1_o4y87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb5ua"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dsr8"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyd7q"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krcse"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ycg7"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jvv5"]
+atlas = ExtResource("1_o4y87")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxgpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb5ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dsr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyd7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krcse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ycg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jvv5")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="pickup_death_effect" type="Node2D"]
+script = ExtResource("1_fyfpp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nxgpw")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
