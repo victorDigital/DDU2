@@ -23,6 +23,10 @@ Global="*res://Scripts/global.gd"
 
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/YouCanDoIt/plugin.cfg")
+
 [gui]
 
 theme/custom_font="res://Assets/Pixel/Menu/Text/Text (White) (8x10).png"
