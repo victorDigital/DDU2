@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0vsvlt7ebiqa"
-path="res://.godot/imported/Yellow.png-4d29fd7cd9f8563c7f69c5cc517cb36d.ctex"
+uid="uid://byo2wb265gjrn"
+path="res://.godot/imported/FumamiYui F#.png-1970b0f5ff6cab252d7f0eb81081fdc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pixel/Background/Yellow.png"
-dest_files=["res://.godot/imported/Yellow.png-4d29fd7cd9f8563c7f69c5cc517cb36d.ctex"]
+source_file="res://Girls/addons/YouCanDoIt/Images/Girls/Nice/FumamiYui F#.png"
+dest_files=["res://.godot/imported/FumamiYui F#.png-1970b0f5ff6cab252d7f0eb81081fdc5.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
