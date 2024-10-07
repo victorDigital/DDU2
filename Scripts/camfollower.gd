@@ -34,3 +34,6 @@ func _process(delta):
 	
 	print(mult)
 	zoom = lerp(zoom,Vector2(mult, mult), 0.01)
+
+	# also scale children of the camera to make them appear the same size
+	scale = Vector2(1/zoom.x * 3, 1/zoom.y * 3)
