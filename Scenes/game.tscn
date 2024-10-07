@@ -993,4 +993,7 @@ position = Vector2(10, 31)
 position = Vector2(0, -55)
 
 [node name="Bridge13" parent="." instance=ExtResource("8_ed4gb")]
-position = Vector2(-142, 19)
+position = Vector2(-135, -17)
+
+[node name="Bridge14" parent="." instance=ExtResource("8_ed4gb")]
+position = Vector2(107, -27)
