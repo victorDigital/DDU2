@@ -17,6 +17,8 @@ var canshoot =true
 var shoot_offset: Vector2
 const BULLET = preload("res://Scenes/bullet.tscn")
 var player_look = 1
+var knockback := Vector2.ZERO
+
 
 func _ready():
 	add_to_group("players")
@@ -55,10 +57,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if velocity.x < 0:
+		
+	knockback = lerp(knockback, Vector2.ZERO, 0.1)
+	velocity.x += knockback.x
+	
+	if direction < 0:
 		player_look = 0
 		$AnimatedSprite2D.flip_h = true
-	if velocity.x > 0:
+	if direction > 0:
 		player_look = 1
 		$AnimatedSprite2D.flip_h = false
 		
@@ -81,8 +87,12 @@ func _physics_process(delta: float) -> void:
 			var shoot_position
 			if player_look == 1:
 				shoot_position = 0
+				knockback.x = -200
+
 			if player_look == 0:
 				shoot_position = -PI
+				knockback.x = 200
+
 			var bullet = BULLET.instantiate()
 			bullet.position = global_position + Vector2(10 * cos(shoot_position), 10 * sin(shoot_position))
 			bullet.rotate(shoot_position)
