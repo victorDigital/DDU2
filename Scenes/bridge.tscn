@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cub2w1n12x5jl"]
+[gd_scene load_steps=6 format=3 uid="uid://cub2w1n12x5jl"]
 
 [ext_resource type="Script" path="res://Scripts/bridge.gd" id="1_2y8ui"]
 [ext_resource type="Texture2D" uid="uid://twkkb3ivokca" path="res://Assets/Pixel/Terrain/Terrain (16x16).png" id="1_5usoa"]
@@ -157,9 +157,6 @@ sources/0 = SubResource("TileSetAtlasSource_p6hkp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvo7x"]
 size = Vector2(47.9994, 4.95081)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibs3a"]
-size = Vector2(48, 24)
-
 [node name="Bridge" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_2y8ui")
@@ -172,16 +169,3 @@ tile_set = SubResource("TileSet_2h23p")
 position = Vector2(8.0002, -13.5246)
 shape = SubResource("RectangleShape2D_xvo7x")
 one_way_collision = true
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(8, -23)
-shape = SubResource("RectangleShape2D_ibs3a")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
