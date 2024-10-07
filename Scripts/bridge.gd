@@ -1,17 +1,34 @@
 extends StaticBody2D
 
-@onready var collision = $CollisionShape2D
-@onready var area = $Area2D
+const FALL_THROUGH_TIME = 0.5
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("player1_down") || event.is_action_pressed("player2_down"):
-		area.set_deferred("monitoring", true)
+# Dictionary to keep track of players who are falling through
+var falling_players = {}
 
-func _on_area_2d_body_entered(body: Node) -> void:
-	collision.set_deferred("disabled", true)
+func _ready():
+	# Make sure collision layer and mask are set up correctly
+	set_collision_layer_value(1, true)  # Layer 1 for platforms
+	set_collision_mask_value(1, true)   # Respond to player collision
 
+func _process(_delta):
+	# Check each falling player
+	for player_id in falling_players.keys():
+		if falling_players[player_id] <= 0:
+			falling_players.erase(player_id)
 
+	# Update collision exception for each player
+	for player in get_tree().get_nodes_in_group("players"):
+		if falling_players.has(player.name):
+			# Disable collision with this player
+			add_collision_exception_with(player)
+		else:
+			# Enable collision with this player
+			remove_collision_exception_with(player)
 
-func _on_area_2d_body_exited(body: Node) -> void:
-	collision.set_deferred("disabled", false)
-	area.set_deferred("monitoring", false)
+	# Decrement timers
+	for player_id in falling_players.keys():
+		falling_players[player_id] -= _delta
+
+# Called when a player wants to fall through
+func initiate_fall_through(player):
+	falling_players[player.name] = FALL_THROUGH_TIME

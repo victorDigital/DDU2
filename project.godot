@@ -27,6 +27,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray()
 
+[global_group]
+
+players=""
+
 [gui]
 
 theme/custom_font="res://Assets/Pixel/Menu/Text/Text (White) (8x10).png"

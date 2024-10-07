@@ -43,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	
 	emit_signal("p2_health_changed", health)
 	
+	if Input.is_action_just_pressed("player2_down"):  # Use unique action per player
+		attempt_fall_through()
+	
 	if position.y > 150:
 		take_damage(1000)
 	
@@ -110,3 +113,12 @@ func _player_dead():
 
 func _on_shoot_cooldown_timeout() -> void:
 	canshoot = true
+
+func attempt_fall_through():
+	# Cast a ray downward to check for platforms
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + Vector2(0, 10))
+	var result = space_state.intersect_ray(query)
+	
+	if result and result.collider.has_method("initiate_fall_through"):
+		result.collider.initiate_fall_through(self)
