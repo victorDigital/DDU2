@@ -94,7 +94,7 @@ func _physics_process(delta: float) -> void:
 				knockback.x = 200
 
 			var bullet = BULLET.instantiate()
-			bullet.position = global_position + Vector2(10 * cos(shoot_position), 10 * sin(shoot_position))
+			bullet.position = global_position + Vector2(20 * cos(shoot_position), 20 * sin(shoot_position))
 			bullet.rotate(shoot_position)
 			get_tree().root.add_child(bullet)
 		
