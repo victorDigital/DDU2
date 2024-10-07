@@ -16,6 +16,7 @@ var canshoot =true
 var shoot_offset: Vector2
 const BULLET = preload("res://Scenes/bullet.tscn")
 var player_look = 0
+var knockback := Vector2.ZERO
 
 func increase_health(amount: int):
 	health += amount
@@ -30,16 +31,23 @@ func _ready() -> void:
 	
 	
 func take_damage(dmg: int):
+	health -= dmg
+	
 	if health <= 0:
 		_player_dead()
-	else:
-		health -= dmg
 
 	
 
 func _physics_process(delta: float) -> void:
+	print(knockback)
+	
 	emit_signal("p2_health_changed", health)
-
+	
+	if Input.is_action_just_pressed("player2_down"):  # Use unique action per player
+		attempt_fall_through()
+	
+	if position.y > 150:
+		take_damage(1000)
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta*1.5
@@ -51,14 +59,20 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("player2_left", "player2_right")
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if velocity.x < 0:
+	
+	knockback = lerp(knockback, Vector2.ZERO, 0.1)
+	velocity.x += knockback.x
+		
+	if direction< 0:
 		player_look = 0
 		$AnimatedSprite2D.flip_h = true
-	if velocity.x > 0:
+	if direction > 0:
 		player_look = 1
 		$AnimatedSprite2D.flip_h = false
 	
@@ -81,10 +95,13 @@ func _physics_process(delta: float) -> void:
 			var shoot_position
 			if player_look == 1:
 				shoot_position = 0
+				knockback.x = -200
 			if player_look == 0: 
 				shoot_position = -PI
+				knockback.x = 200
+			
 			var bullet = BULLET.instantiate()
-			bullet.position = global_position + Vector2(10 * cos(shoot_position), 10* sin(shoot_position))
+			bullet.position = global_position + Vector2(20 * cos(shoot_position), 20* sin(shoot_position))
 			bullet.rotate(shoot_position)
 			get_tree().root.add_child(bullet)
 
@@ -96,3 +113,12 @@ func _player_dead():
 
 func _on_shoot_cooldown_timeout() -> void:
 	canshoot = true
+
+func attempt_fall_through():
+	# Cast a ray downward to check for platforms
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, global_position + Vector2(0, 10))
+	var result = space_state.intersect_ray(query)
+	
+	if result and result.collider.has_method("initiate_fall_through"):
+		result.collider.initiate_fall_through(self)

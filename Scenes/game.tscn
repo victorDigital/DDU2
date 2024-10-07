@@ -985,3 +985,12 @@ texture_under = ExtResource("8_c03qx")
 texture_over = ExtResource("9_pl426")
 texture_progress = ExtResource("10_qa4lv")
 script = ExtResource("14_3i1iv")
+
+[node name="health_pickup" parent="." instance=ExtResource("15_jvclc")]
+position = Vector2(10, 31)
+
+[node name="health_pickup2" parent="." instance=ExtResource("15_jvclc")]
+position = Vector2(0, -55)
+
+[node name="Bridge4" parent="." instance=ExtResource("8_ed4gb")]
+position = Vector2(-142, 19)
