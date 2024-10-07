@@ -4,8 +4,8 @@ extends Node2D
 @onready var p1 = $player_1  # Assuming you have a Player node
 @onready var p2 = $player_2  # Assuming you have a Player node
 
-@onready var h1 = $Player1Health  # Assuming you have a Health UI node
-@onready var h2 = $Player2Health  # Assuming you have a Health UI node
+@onready var h1 = $Camera2D/Player1Health  # Assuming you have a Health UI node
+@onready var h2 = $Camera2D/Player2Health  # Assuming you have a Health UI node
 
 
 func _ready() -> void:

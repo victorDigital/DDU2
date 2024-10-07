@@ -8,7 +8,7 @@ var falling_players = {}
 func _ready():
 	# Make sure collision layer and mask are set up correctly
 	set_collision_layer_value(1, true)  # Layer 1 for platforms
-	set_collision_mask_value(1, true)   # Respond to player collision
+	set_collision_mask_value(2, true)   # Respond to player collision
 
 func _process(_delta):
 	# Check each falling player
