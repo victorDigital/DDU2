@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("player1_down"):  # Use unique action per player
 		attempt_fall_through()
-	# Add the gravity.
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta*1.5
 		
