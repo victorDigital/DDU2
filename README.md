@@ -29,7 +29,7 @@ begge brugere skal kunne samle pickups op ved at gå ind i dem.
 - Elmer: Det gad jeg godt spille.
 ### Playtest af demo
 - Sebastian: synes at 2 player delen er virkelig fed, men ville tilføje en eller anden form for knockback eller recoil
-- Thommas: sjovt, men ville være godt, hvis man kunne gå ned fra platformene nemmere
+- Thomas: sjovt, men ville være godt, hvis man kunne gå ned fra platformene nemmere
 ### Det færdige spil
 - Gustav: sjovt, massere af kaos.
 - Nojus: godt casual spil
