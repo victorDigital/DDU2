@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://g2ei10x3gjq2" path="res://Assets/Pixel/Main Characters/Pink Man/Jump (32x32).png" id="11_84nl2"]
 [ext_resource type="Script" path="res://Scripts/player_2_health.gd" id="13_cy1xr"]
 [ext_resource type="Script" path="res://Scripts/player_1_health.gd" id="14_3i1iv"]
-[ext_resource type="PackedScene" path="res://Scenes/pickup_spawner.tscn" id="18_mnqpo"]
+[ext_resource type="PackedScene" uid="uid://c6derxi47cwqw" path="res://Scenes/pickup_spawner.tscn" id="18_mnqpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873md"]
 texture = ExtResource("5_j1ett")
