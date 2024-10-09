@@ -42,6 +42,8 @@ func _physics_process(delta: float) -> void:
 	print(knockback)
 	
 	emit_signal("p2_health_changed", health)
+	if health > 100:
+		health = 100
 	
 	if Input.is_action_just_pressed("player2_down"):  # Use unique action per player
 		attempt_fall_through()

@@ -41,7 +41,8 @@ func take_damage(dmg: int):
 
 func _physics_process(delta: float) -> void:
 	emit_signal("p1_health_changed", health)
-
+	if health > 100:
+		health = 100
 	if position.y > 150:
 		take_damage(1000)
 		
