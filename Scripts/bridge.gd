@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const FALL_THROUGH_TIME = 0.5
+const FALL_THROUGH_TIME = 0.2
 
 # Dictionary to keep track of players who are falling through
 var falling_players = {}
