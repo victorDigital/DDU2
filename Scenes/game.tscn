@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://betdgmhwg0xty"]
+[gd_scene load_steps=27 format=4 uid="uid://betdgmhwg0xty"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_gd6tt"]
 [ext_resource type="PackedScene" uid="uid://c6r73fpjvvn8u" path="res://Scenes/player_1.tscn" id="1_j67ix"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://g2ei10x3gjq2" path="res://Assets/Pixel/Main Characters/Pink Man/Jump (32x32).png" id="11_84nl2"]
 [ext_resource type="Script" path="res://Scripts/player_2_health.gd" id="13_cy1xr"]
 [ext_resource type="Script" path="res://Scripts/player_1_health.gd" id="14_3i1iv"]
-[ext_resource type="PackedScene" uid="uid://cwqxf2o30wiw8" path="res://Scenes/health_pickup.tscn" id="15_jvclc"]
 [ext_resource type="PackedScene" uid="uid://c6derxi47cwqw" path="res://Scenes/pickup_spawner.tscn" id="18_mnqpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_873md"]
@@ -915,12 +914,6 @@ position = Vector2(-7, -29)
 [node name="Bridge3" parent="." instance=ExtResource("8_ed4gb")]
 position = Vector2(39, 12)
 
-[node name="health_pickup" parent="." instance=ExtResource("15_jvclc")]
-position = Vector2(10, 31)
-
-[node name="health_pickup2" parent="." instance=ExtResource("15_jvclc")]
-position = Vector2(0, -55)
-
 [node name="Bridge4" parent="." instance=ExtResource("8_ed4gb")]
 position = Vector2(-267, -119)
 
@@ -986,12 +979,6 @@ texture_under = ExtResource("8_c03qx")
 texture_over = ExtResource("9_pl426")
 texture_progress = ExtResource("10_qa4lv")
 script = ExtResource("14_3i1iv")
-
-[node name="health_pickup3" parent="." instance=ExtResource("15_jvclc")]
-position = Vector2(10, 31)
-
-[node name="health_pickup4" parent="." instance=ExtResource("15_jvclc")]
-position = Vector2(0, -55)
 
 [node name="Bridge13" parent="." instance=ExtResource("8_ed4gb")]
 position = Vector2(-135, -17)
