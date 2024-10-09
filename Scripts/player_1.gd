@@ -42,6 +42,9 @@ func take_damage(dmg: int):
 func _physics_process(delta: float) -> void:
 	emit_signal("p1_health_changed", health)
 
+	if position.y > 150:
+		take_damage(1000)
+		
 	if Input.is_action_just_pressed("player1_down"):  # Use unique action per player
 		attempt_fall_through()
 
