@@ -15,8 +15,8 @@ bruger 2. skal kunne bevæge sig rundt i spillet ved at trykke på WASD-tasterne
 
 ### Shooting
 
-bruger 1. skal kunne skyde med sin karakter ved at trykke på mellemrumstasten.  
-bruger 2. skal kunne skyde med sin karakter ved at trykke på E.
+bruger 1. skal kunne skyde med sin karakter ved at trykke på M.  
+bruger 2. skal kunne skyde med sin karakter ved at trykke på R.
 
 ### Pickups
 
